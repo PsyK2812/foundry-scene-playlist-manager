@@ -1,0 +1,35 @@
+<div class="spm-list">
+  <div class="spm-header">
+    <span></span>
+    <span></span>
+    <span>{{localize "SPM.Scene"}}</span>
+    <span>{{localize "SPM.Playlist"}}</span>
+    <span>{{localize "SPM.Track"}}</span>
+    <span></span>
+  </div>
+  {{#each scenes}}
+  <div class="spm-scene {{#if hasPlaylist}}has-playlist{{/if}}" data-scene-id="{{id}}" data-folder-id="{{folderId}}"
+       data-has-playlist="{{#if hasPlaylist}}1{{else}}0{{/if}}" data-search="{{searchText}}">
+    <input type="checkbox" class="spm-check">
+    <img class="spm-thumb" src="{{thumb}}" alt="" data-action="viewScene" data-tooltip="{{localize "SPM.View"}}">
+    <div class="spm-name">
+      <span class="spm-scene-name">{{#if active}}<i class="fa-solid fa-bullseye" data-tooltip="Active"></i> {{/if}}{{name}}</span>
+      <span class="spm-folder-name">{{folderName}}</span>
+    </div>
+    <select class="spm-playlist">
+      {{#each playlistOptions}}
+      <option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>
+      {{/each}}
+    </select>
+    <select class="spm-sound" {{#unless hasPlaylist}}disabled{{/unless}}>
+      {{#each soundOptions}}
+      <option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>
+      {{/each}}
+    </select>
+    <button type="button" class="spm-clear" data-action="clearScene" data-tooltip="{{localize "SPM.Clear"}}" {{#unless hasPlaylist}}disabled{{/unless}}>
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  {{/each}}
+  <p class="spm-empty spm-hidden">{{localize "SPM.Empty"}}</p>
+</div>

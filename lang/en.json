@@ -1,0 +1,30 @@
+{
+  "SPM": {
+    "Title": "Scene Playlist Manager",
+    "OpenButton": "Scene Playlists",
+    "Search": "Search scenes…",
+    "Filter": {
+      "All": "All scenes",
+      "With": "With playlist",
+      "Without": "Without playlist"
+    },
+    "AllFolders": "All folders",
+    "NoFolder": "(No folder)",
+    "Counts": "{shown} shown · {with} with playlist · {without} without",
+    "Scene": "Scene",
+    "Folder": "Folder",
+    "Playlist": "Playlist",
+    "Track": "Track",
+    "None": "— None —",
+    "WholePlaylist": "— Whole playlist —",
+    "Clear": "Clear playlist",
+    "View": "View scene",
+    "SelectVisible": "Select all shown",
+    "Bulk": "Set selected to:",
+    "Apply": "Apply",
+    "ClearSelected": "Clear selected",
+    "NoneSelected": "No scenes selected.",
+    "BulkDone": "Updated {count} scene(s).",
+    "Empty": "No scenes match the current filter."
+  }
+}

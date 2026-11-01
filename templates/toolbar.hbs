@@ -1,0 +1,28 @@
+<div class="spm-toolbar">
+  <div class="spm-row">
+    <input type="search" class="spm-search" placeholder="{{localize "SPM.Search"}}" value="{{search}}">
+    <select class="spm-filter">
+      <option value="all" {{#if (eq filter "all")}}selected{{/if}}>{{localize "SPM.Filter.All"}}</option>
+      <option value="with" {{#if (eq filter "with")}}selected{{/if}}>{{localize "SPM.Filter.With"}}</option>
+      <option value="without" {{#if (eq filter "without")}}selected{{/if}}>{{localize "SPM.Filter.Without"}}</option>
+    </select>
+    <select class="spm-folder">
+      <option value="">{{localize "SPM.AllFolders"}}</option>
+      {{#each folders}}
+      <option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="spm-row">
+    <label class="spm-selectall"><input type="checkbox" class="spm-check-all"> {{localize "SPM.SelectVisible"}}</label>
+    <span class="spm-bulk-label">{{localize "SPM.Bulk"}}</span>
+    <select class="spm-bulk-playlist">
+      {{#each playlists}}
+      <option value="{{id}}">{{name}}</option>
+      {{/each}}
+    </select>
+    <button type="button" data-action="bulkApply"><i class="fa-solid fa-check"></i> {{localize "SPM.Apply"}}</button>
+    <button type="button" data-action="bulkClear"><i class="fa-solid fa-eraser"></i> {{localize "SPM.ClearSelected"}}</button>
+  </div>
+  <div class="spm-counts"></div>
+</div>
